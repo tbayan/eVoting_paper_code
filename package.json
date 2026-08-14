@@ -1,0 +1,24 @@
+{
+  "name": "blockchain-voting-system-v2",
+  "version": "2.0.0",
+  "description": "Blockchain-based confidentiality-preserving e-voting system with negligible-knowledge verification (updated implementation)",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "benchmark": "hardhat run scripts/benchmark.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.24.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "bigint-crypto-utils": "^3.3.0"
+  }
+}
