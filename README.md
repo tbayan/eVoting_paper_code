@@ -4,6 +4,15 @@ Updated implementation of the blockchain-based confidentiality-preserving e-voti
 system with negligible-knowledge verification. This is a modernisation of the
 original prototype (https://github.com/byt411/BlockchainVotingSystem, 2022).
 
+This repository is the reference implementation for the paper:
+
+> Brian Yim Tam, Talgar Bayan, Richard Banach.
+> *A Blockchain-Based Confidentiality-Preserving Electronic Voting System,
+> with Negligible-Knowledge Verification.* (under review)
+
+All performance and gas figures reported in the paper can be reproduced with
+the scripts in this repository (see Usage below).
+
 ## What changed compared to the original
 
 **Stack**
@@ -44,7 +53,13 @@ npx hardhat compile
 npx hardhat test          # contract tests + full end-to-end election test
 REPORT_GAS=true npx hardhat test   # with gas report
 npx ts-node scripts/benchmark.ts   # crypto benchmarks (2048-bit keys)
+npx hardhat run scripts/gas-measure.ts   # gas per vote with genuine 2048-bit ciphertexts
 ```
+
+`gas-measure.ts` reproduces the gas figures quoted in the paper
+(~975k gas for a first vote, ~267k for a replacement vote); `benchmark.ts`
+reproduces the encryption, homomorphic-addition, and negligible-knowledge
+verification timings.
 
 To deploy on Sepolia, copy `.env.example` to `.env`, fill in your RPC URL and
 private key, then:
