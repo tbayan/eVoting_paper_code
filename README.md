@@ -80,3 +80,14 @@ npx hardhat run scripts/deploy.ts --network sepolia
 
 The React user interface of the original prototype is not ported yet; the
 contracts and the cryptographic protocol are the parts the paper depends on.
+
+## Disclaimer
+
+This is a research prototype accompanying an academic paper. It is intended
+for reproducing the paper's results and for further research. It has not
+undergone an independent security audit and must not be used to run real
+elections.
+
+The modernisation of this codebase was carried out with the assistance of AI
+tooling (Claude, Anthropic), as declared in the accompanying paper. All code
+was reviewed and tested by the authors, who take full responsibility for it.
